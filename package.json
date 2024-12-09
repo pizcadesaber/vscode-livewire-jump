@@ -1,0 +1,75 @@
+{
+  "name": "livewire-jump",
+  "displayName": "Livewire Jump",
+  "description": "A VS Code extension for navigating Livewire and Blade files in Laravel.",
+  "icon": "images/icon.jpg",
+  "version": "1.0.0",
+  "publisher": "pizca",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pizcadesaber/vscode-livewire-jump.git"
+  },
+  "engines": {
+    "vscode": "^1.95.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "PHP",
+    "Laravel",
+    "Livewire",
+    "Blade",
+    "View",
+    "Component",
+    "Jump",
+    "Go To"
+  ],
+  "activationEvents": [
+    "onLanguage:php"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "php.livewire.goToClass",
+        "title": "Go to Livewire class",
+        "category": "Livewire"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "php.livewire.goToClass",
+          "when": "resourcePath =~ /livewire/ && editorLangId == blade",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.95.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@typescript-eslint/eslint-plugin": "^6.13.1",
+    "@typescript-eslint/parser": "^6.13.1",
+    "eslint": "^8.54.0",
+    "typescript": "^5.3.2",
+    "ts-loader": "^9.5.1",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "@vscode/test-cli": "^0.0.4",
+    "@vscode/test-electron": "^2.3.8"
+  }
+}
