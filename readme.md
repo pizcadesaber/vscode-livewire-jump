@@ -4,11 +4,11 @@ This extension allows you to quickly navigate between Livewire views and their a
 
 ## Features
 
-- **Navigate from Blade to Livewire**: Easily jump from a Blade file to its corresponding Livewire PHP class.
+- **Navigate from Blade to Livewire**: Easily jump from a Blade file to its corresponding Livewire PHP class. Right-click on a Blade file located in the `livewire` directory and select `Go to Livewire Class`.
 
     ![Go to Livewire class](https://github.com/pizcadesaber/vscode-livewire-jump/raw/HEAD/docs/images/go-to-class.gif)
   
-- **Navigate from Blade to other components**: This feature allows you to go from a Blade view to other Livewire and Blade components. Support for Blade components was added.
+- **Navigate from Blade to other components**: This feature allows you to go from a Blade view to other Livewire and Blade components. Hold `Ctrl` and left-click on any tag that starts with `<x-` or `<livewire:`.
 
     ![Go to component view](https://github.com/pizcadesaber/vscode-livewire-jump/raw/HEAD/docs/images/go-to-component.gif)
 
@@ -25,12 +25,3 @@ The extension doesn't require additional configuration. Simply install it, and i
 ## Known Issues
 
 Currently, there are no significant known issues. If you encounter any bugs or unexpected behavior, feel free to report it in the repository.
-
-## Release Notes
-
-### 1.0.0
-
-- Go to PHP class from Livewire Blade views: Right-click and select `Go to Livewire Class`.
-- Go to Livewire or Blade component views from Blade views (`Ctrl+click`).
-
-Enjoy faster and more efficient navigation in your Laravel project with Livewire and Blade!

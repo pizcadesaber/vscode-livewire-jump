@@ -3,7 +3,7 @@
   "displayName": "Livewire Jump",
   "description": "A VS Code extension for navigating Livewire and Blade files in Laravel.",
   "icon": "images/icon.jpg",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "publisher": "pizca",
   "repository": {
     "type": "git",
