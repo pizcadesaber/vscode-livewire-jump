@@ -3,7 +3,7 @@
   "displayName": "Livewire Jump",
   "description": "A VS Code extension for navigating Livewire and Blade files in Laravel.",
   "icon": "images/icon.jpg",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "publisher": "pizca",
   "repository": {
     "type": "git",
@@ -23,7 +23,8 @@
     "View",
     "Component",
     "Jump",
-    "Go To"
+    "Go To",
+    "Autocomplete"
   ],
   "activationEvents": [
     "onLanguage:php"
@@ -35,6 +36,38 @@
         "command": "php.livewire.goToClass",
         "title": "Go to Livewire class",
         "category": "Livewire"
+      },
+      {
+        "command": "php.livewire.goToView",
+        "title": "Go to Livewire view",
+        "category": "Livewire"
+      }
+    ],
+    "configuration": [
+      {
+        "title": "Livewire Jump",
+        "properties": {
+          "livewire-jump.autocomplete.enable": {
+            "type": "boolean",
+            "default": true,
+            "description": "Enable autocomplete for <livewire: with component routes."
+          },
+          "livewire-jump.livewirePath": {
+            "type": "string",
+            "default": "app/Livewire",
+            "description": "Livewire components dir (PHP classes)."
+          },
+          "livewire-jump.autocomplete.exclude": {
+            "type": "array",
+            "description": "Exclude files and folders from autocomplete.",
+            "items": {
+              "type": "string"
+            },
+            "default": [
+              "Pages"
+            ]
+          }
+        }
       }
     ],
     "menus": {
@@ -42,6 +75,11 @@
         {
           "command": "php.livewire.goToClass",
           "when": "resourcePath =~ /livewire/ && editorLangId == blade",
+          "group": "navigation"
+        },
+        {
+          "command": "php.livewire.goToView",
+          "when": "resourcePath =~ /Livewire/ && editorLangId == php",
           "group": "navigation"
         }
       ]
