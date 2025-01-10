@@ -3,7 +3,7 @@
   "displayName": "Livewire Jump",
   "description": "A VS Code extension for navigating Livewire and Blade files in Laravel.",
   "icon": "images/icon.jpg",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "publisher": "pizca",
   "repository": {
     "type": "git",
@@ -27,39 +27,38 @@
     "Autocomplete"
   ],
   "activationEvents": [
-    "onLanguage:php"
+    "onLanguage:php",
+    "onLanguage:blade"
   ],
   "main": "./dist/extension.js",
   "contributes": {
-    "commands": [
-      {
-        "command": "php.livewire.goToClass",
-        "title": "Go to Livewire class",
-        "category": "Livewire"
-      },
-      {
-        "command": "php.livewire.goToView",
-        "title": "Go to Livewire view",
-        "category": "Livewire"
-      }
-    ],
     "configuration": [
       {
         "title": "Livewire Jump",
         "properties": {
-          "livewire-jump.autocomplete.enable": {
-            "type": "boolean",
-            "default": true,
-            "description": "Enable autocomplete for <livewire: with component routes."
+          "livewire-jump.bladePath": {
+            "type": "string",
+            "default": "resources/views",
+            "description": "Blade view resource dir. Livewire view dir must be /livewire to work 'Go to'."
+          },
+          "livewire-jump.viewPath": {
+            "type": "string",
+            "default": "app/View",
+            "description": "App view dir (PHP classes). Blade components dir must be /components to work 'Go to'."
           },
           "livewire-jump.livewirePath": {
             "type": "string",
             "default": "app/Livewire",
             "description": "Livewire components dir (PHP classes)."
           },
+          "livewire-jump.autocomplete.enable": {
+            "type": "boolean",
+            "default": true,
+            "description": "Enable autocomplete for <livewire: with component routes."
+          },
           "livewire-jump.autocomplete.exclude": {
             "type": "array",
-            "description": "Exclude files and folders from autocomplete.",
+            "description": "Exclude files and folders from autocomplete. It could be useful to exclude full page components.",
             "items": {
               "type": "string"
             },
@@ -70,16 +69,36 @@
         }
       }
     ],
+    "commands": [
+      {
+        "command": "livewire-jump.goToClass",
+        "title": "Go to PHP Class"
+      },
+      {
+        "command": "livewire-jump.goToView",
+        "title": "Go to Blade View"
+      }
+    ],
     "menus": {
+      "commandPalette": [
+        {
+          "command": "livewire-jump.goToClass",
+          "when": "livewire-jump.hasClass"
+        },
+        {
+          "command": "livewire-jump.goToView",
+          "when": "livewire-jump.hasView"
+        }
+      ],
       "editor/context": [
         {
-          "command": "php.livewire.goToClass",
-          "when": "resourcePath =~ /livewire/ && editorLangId == blade",
+          "command": "livewire-jump.goToClass",
+          "when": "livewire-jump.hasClass",
           "group": "navigation"
         },
         {
-          "command": "php.livewire.goToView",
-          "when": "resourcePath =~ /Livewire/ && editorLangId == php",
+          "command": "livewire-jump.goToView",
+          "when": "livewire-jump.hasView",
           "group": "navigation"
         }
       ]
