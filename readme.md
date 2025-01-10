@@ -4,7 +4,7 @@ This extension allows you to quickly navigate between Livewire views, their asso
 
 ## Features
 
-- **Navigate from Blade to PHP class**: Easily jump from a Blade file to its corresponding PHP class. Right-click on a Blade file located in the `resources/views/livewire` directory and select `Go to PHP Class`.
+- **Navigate from Blade to PHP class**: Easily jump from a Blade file to its corresponding PHP class. Right-click on a Blade file located in the `resources/views` directory and select `Go to PHP Class`.
 
     ![Go to Livewire class](https://github.com/pizcadesaber/vscode-livewire-jump/raw/HEAD/docs/images/go-to-class.gif)
 
