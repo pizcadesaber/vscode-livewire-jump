@@ -6,6 +6,12 @@ All notable changes to the "livewire-jump" extension will be documented in this 
 
 - No changes yet.
 
+## [1.3.0] - 2025-01-14
+
+- Changed tag navigation from definitions to clickable links for `<livewire:...>` and `<x-...>`.  
+- Added autocomplete for `view('')`, suggesting existing Blade files.  
+- Minor bug fixes and improvements.
+
 ## [1.2.1] - 2025-01-10
 
 - Added support for Blade component classes:

@@ -3,7 +3,7 @@
   "displayName": "Livewire Jump",
   "description": "A VS Code extension for navigating Livewire and Blade files in Laravel.",
   "icon": "images/icon.jpg",
-  "version": "1.2.1",
+  "version": "1.3.0",
   "publisher": "pizca",
   "repository": {
     "type": "git",
@@ -13,7 +13,8 @@
     "vscode": "^1.95.0"
   },
   "categories": [
-    "Other"
+    "Programming Languages",
+    "Snippets"
   ],
   "keywords": [
     "PHP",
@@ -36,27 +37,37 @@
       {
         "title": "Livewire Jump",
         "properties": {
-          "livewire-jump.bladePath": {
-            "type": "string",
-            "default": "resources/views",
-            "description": "Blade view resource dir. Livewire view dir must be /livewire to work 'Go to'."
-          },
-          "livewire-jump.viewPath": {
-            "type": "string",
-            "default": "app/View",
-            "description": "App view dir (PHP classes). Blade components dir must be /components to work 'Go to'."
-          },
-          "livewire-jump.livewirePath": {
-            "type": "string",
-            "default": "app/Livewire",
-            "description": "Livewire components dir (PHP classes)."
-          },
-          "livewire-jump.autocomplete.enable": {
+          "livewire-jump.view.autocomplete": {
             "type": "boolean",
             "default": true,
-            "description": "Enable autocomplete for <livewire: with component routes."
+            "description": "Enable view string autocomplete."
           },
-          "livewire-jump.autocomplete.exclude": {
+          "livewire-jump.view.link": {
+            "type": "boolean",
+            "default": true,
+            "description": "Enable view link."
+          },
+          "livewire-jump.blade.autocomplete": {
+            "type": "boolean",
+            "default": true,
+            "description": "Enable autocomplete for '<x-' Blade tags. (Unfinished)"
+          },
+          "livewire-jump.blade.tagLink": {
+            "type": "boolean",
+            "default": true,
+            "description": "Enable Blade component tag links."
+          },
+          "livewire-jump.livewire.tagLink": {
+            "type": "boolean",
+            "default": true,
+            "description": "Enable Livewire Blade tag links."
+          },
+          "livewire-jump.livewire.autocomplete.enable": {
+            "type": "boolean",
+            "default": true,
+            "description": "Enable autocomplete for '<livewire:' Blade tags."
+          },
+          "livewire-jump.livewire.autocomplete.exclude": {
             "type": "array",
             "description": "Exclude files and folders from autocomplete. It could be useful to exclude full page components.",
             "items": {
