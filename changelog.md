@@ -6,6 +6,13 @@ All notable changes to the "livewire-jump" extension will be documented in this 
 
 - No changes yet.
 
+## [2.0.0] - 2025-01-15
+
+- Completely refactored the core of the extension. All providers are now connected to a unified, large-scale caching system.
+- Added a new contextual menu option to read all Blade files and register them locally in the workspace, allowing for faster loading instead of reading files in real-time.
+- The current system is a significant improvement, especially with the new route selection configuration, where prefixes for views and tags can be specified. The key should be `bladeDir|classDir`, and the value `tagPrefix|aliasPrefix`.
+
+
 ## [1.3.0] - 2025-01-14
 
 - Changed tag navigation from definitions to clickable links for `<livewire:...>` and `<x-...>`.  

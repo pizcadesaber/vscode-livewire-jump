@@ -1,9 +1,9 @@
 {
   "name": "livewire-jump",
   "displayName": "Livewire Jump",
-  "description": "A VS Code extension for navigating Livewire and Blade files in Laravel.",
+  "description": "A VS Code extension for navigating Laravel/Livewire project files.",
   "icon": "images/icon.jpg",
-  "version": "1.3.0",
+  "version": "2.0.0",
   "publisher": "pizca",
   "repository": {
     "type": "git",
@@ -47,35 +47,44 @@
             "default": true,
             "description": "Enable view link."
           },
+          "livewire-jump.view.dirs": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "markdownDescription": "Set identifier. Tags must start with `<`."
+            },
+            "default": {
+              "resources/views:app/View": "",
+              "resources/views/components:app/View/Components": "x-|components.",
+              "resources/views/livewire:app/Livewire": "livewire:|livewire.",
+              "resources/views/livewire/pages:app/Livewire/Pages": "|livewire.pages."
+            },
+            "markdownDescription": "Set view directories and their associated tags."
+          },
           "livewire-jump.blade.autocomplete": {
             "type": "boolean",
             "default": true,
-            "description": "Enable autocomplete for '<x-' Blade tags. (Unfinished)"
+            "markdownDescription": "Enable autocomplete for `<x-` Blade tags."
           },
-          "livewire-jump.blade.tagLink": {
+          "livewire-jump.blade.link": {
             "type": "boolean",
             "default": true,
             "description": "Enable Blade component tag links."
           },
-          "livewire-jump.livewire.tagLink": {
+          "livewire-jump.blade.hover": {
             "type": "boolean",
             "default": true,
-            "description": "Enable Livewire Blade tag links."
+            "description": "Enable Blade component tag hovers."
           },
           "livewire-jump.livewire.autocomplete.enable": {
             "type": "boolean",
             "default": true,
-            "description": "Enable autocomplete for '<livewire:' Blade tags."
+            "markdownDescription": "Enable autocomplete for `<livewire:` Blade tags."
           },
-          "livewire-jump.livewire.autocomplete.exclude": {
-            "type": "array",
-            "description": "Exclude files and folders from autocomplete. It could be useful to exclude full page components.",
-            "items": {
-              "type": "string"
-            },
-            "default": [
-              "Pages"
-            ]
+          "livewire-jump.livewire.link": {
+            "type": "boolean",
+            "default": true,
+            "description": "Enable Livewire Blade tag links."
           }
         }
       }
@@ -88,6 +97,10 @@
       {
         "command": "livewire-jump.goToView",
         "title": "Go to Blade View"
+      },
+      {
+        "command": "livewire-jump.refreshViews",
+        "title": "Refresh Views"
       }
     ],
     "menus": {
@@ -99,6 +112,10 @@
         {
           "command": "livewire-jump.goToView",
           "when": "livewire-jump.hasView"
+        },
+        {
+          "command": "livewire-jump.refreshViews",
+          "when": "editorLangId == php || editorLangId == blade"
         }
       ],
       "editor/context": [
@@ -111,6 +128,11 @@
           "command": "livewire-jump.goToView",
           "when": "livewire-jump.hasView",
           "group": "navigation"
+        },
+        {
+          "command": "livewire-jump.refreshViews",
+          "when": "editorLangId == php || editorLangId == blade",
+          "group": "z_commands"
         }
       ]
     }
