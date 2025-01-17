@@ -3,33 +3,37 @@
   "displayName": "Livewire Jump",
   "description": "A VS Code extension for navigating Laravel/Livewire project files.",
   "icon": "images/icon.jpg",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "publisher": "pizca",
+  "homepage": "https://github.com/pizcadesaber/vscode-livewire-jump",
   "repository": {
     "type": "git",
     "url": "https://github.com/pizcadesaber/vscode-livewire-jump.git"
   },
+  "bugs": {
+    "url": "https://github.com/pizcadesaber/vscode-livewire-jump/issues"
+  },
   "engines": {
-    "vscode": "^1.95.0"
+    "vscode": "^1.96.0"
   },
   "categories": [
     "Programming Languages",
     "Snippets"
   ],
   "keywords": [
-    "PHP",
     "Laravel",
     "Livewire",
+    "PHP",
+    "Autocomplete",
     "Blade",
-    "View",
     "Component",
-    "Jump",
     "Go To",
-    "Autocomplete"
+    "Jump",
+    "View"
   ],
   "activationEvents": [
-    "onLanguage:php",
-    "onLanguage:blade"
+    "onLanguage:blade",
+    "onLanguage:php"
   ],
   "main": "./dist/extension.js",
   "contributes": {
@@ -37,21 +41,31 @@
       {
         "title": "Livewire Jump",
         "properties": {
-          "livewire-jump.view.autocomplete": {
+          "livewire-jump.blade.tag.completion": {
             "type": "boolean",
             "default": true,
-            "description": "Enable view string autocomplete."
+            "description": "Enables autocomplete for `<x-` Blade tags."
           },
-          "livewire-jump.view.link": {
+          "livewire-jump.blade.tag.hover": {
             "type": "boolean",
             "default": true,
-            "description": "Enable view link."
+            "description": "Enables Blade component tag hovers."
+          },
+          "livewire-jump.blade.tag.link": {
+            "type": "boolean",
+            "default": true,
+            "description": "Enables Blade and Livewire component tag links for Blade templates."
+          },
+          "livewire-jump.view.completion": {
+            "type": "boolean",
+            "default": true,
+            "description": "Enables view autocompletion for functions."
           },
           "livewire-jump.view.dirs": {
             "type": "object",
             "additionalProperties": {
               "type": "string",
-              "markdownDescription": "Set identifier. Tags must start with `<`."
+              "description": "Sets the identifier. Tags must start with `<`."
             },
             "default": {
               "resources/views:app/View": "",
@@ -59,37 +73,31 @@
               "resources/views/livewire:app/Livewire": "livewire:|livewire.",
               "resources/views/livewire/pages:app/Livewire/Pages": "|livewire.pages."
             },
-            "markdownDescription": "Set view directories and their associated tags."
+            "description": "Sets view directories and their associated tags."
           },
-          "livewire-jump.blade.autocomplete": {
+          "livewire-jump.view.hover": {
             "type": "boolean",
             "default": true,
-            "markdownDescription": "Enable autocomplete for `<x-` Blade tags."
+            "description": "Enables view hover."
           },
-          "livewire-jump.blade.link": {
+          "livewire-jump.view.link": {
             "type": "boolean",
             "default": true,
-            "description": "Enable Blade component tag links."
+            "description": "Enables view link."
           },
-          "livewire-jump.blade.hover": {
+          "livewire-jump.view.navigation": {
             "type": "boolean",
             "default": true,
-            "description": "Enable Blade component tag hovers."
-          },
-          "livewire-jump.livewire.autocomplete.enable": {
-            "type": "boolean",
-            "default": true,
-            "markdownDescription": "Enable autocomplete for `<livewire:` Blade tags."
-          },
-          "livewire-jump.livewire.link": {
-            "type": "boolean",
-            "default": true,
-            "description": "Enable Livewire Blade tag links."
+            "description": "Enables `Go to Class` and `Go to View` options for Blade and Livewire components."
           }
         }
       }
     ],
     "commands": [
+      {
+        "command": "livewire-jump.clearViews",
+        "title": "Livewire Jump: Clear Views"
+      },
       {
         "command": "livewire-jump.goToClass",
         "title": "Go to PHP Class"
@@ -134,32 +142,42 @@
           "when": "editorLangId == php || editorLangId == blade",
           "group": "z_commands"
         }
+      ],
+      "statusBar": [
+        {
+          "command": "livewire-jump.clearViews",
+          "alignment": "right",
+          "text": "Clear Views",
+          "tooltip": "Clear the cached views"
+        }
       ]
     }
   },
   "scripts": {
-    "vscode:prepublish": "npm run compile",
-    "compile": "webpack",
-    "watch": "webpack --watch",
-    "package": "webpack --mode production --devtool hidden-source-map",
+    "vscode:prepublish": "npm run package",
+    "compile": "npm run check-types && npm run lint && node esbuild.js",
+    "watch": "npm-run-all -p watch:*",
+    "watch:esbuild": "node esbuild.js --watch",
+    "watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
+    "package": "npm run check-types && npm run lint && node esbuild.js --production",
     "compile-tests": "tsc -p . --outDir out",
     "watch-tests": "tsc -p . -w --outDir out",
     "pretest": "npm run compile-tests && npm run compile && npm run lint",
-    "lint": "eslint src --ext ts",
+    "check-types": "tsc --noEmit",
+    "lint": "eslint src",
     "test": "vscode-test"
   },
   "devDependencies": {
-    "@types/vscode": "^1.95.0",
-    "@types/mocha": "^10.0.6",
-    "@types/node": "18.x",
-    "@typescript-eslint/eslint-plugin": "^6.13.1",
-    "@typescript-eslint/parser": "^6.13.1",
-    "eslint": "^8.54.0",
-    "typescript": "^5.3.2",
-    "ts-loader": "^9.5.1",
-    "webpack": "^5.89.0",
-    "webpack-cli": "^5.1.4",
-    "@vscode/test-cli": "^0.0.4",
-    "@vscode/test-electron": "^2.3.8"
+    "@types/vscode": "^1.96.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^8.17.0",
+    "@typescript-eslint/parser": "^8.17.0",
+    "eslint": "^9.16.0",
+    "esbuild": "^0.24.0",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^5.7.2",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
   }
 }

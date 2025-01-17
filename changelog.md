@@ -6,6 +6,11 @@ All notable changes to the "livewire-jump" extension will be documented in this 
 
 - No changes yet.
 
+## [2.0.1] - 2025-01-15
+
+- Improves the names of the settings.
+- Updates the `Go to *` command visibility after refreshing the views.
+
 ## [2.0.0] - 2025-01-15
 
 - Completely refactored the core of the extension. All providers are now connected to a unified, large-scale caching system.
