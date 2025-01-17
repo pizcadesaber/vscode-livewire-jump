@@ -10,6 +10,7 @@ All notable changes to the "livewire-jump" extension will be documented in this 
 
 - Improves the names of the settings.
 - Updates the `Go to *` command visibility after refreshing the views.
+- `Clear Views` command that clears cached views. (`Ctrl+Shift+P` and search this command).
 
 ## [2.0.0] - 2025-01-15
 
