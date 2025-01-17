@@ -6,7 +6,7 @@ All notable changes to the "livewire-jump" extension will be documented in this 
 
 - No changes yet.
 
-## [2.0.1] - 2025-01-15
+## [2.0.1] - 2025-01-17
 
 - Improves the names of the settings.
 - Updates the `Go to *` command visibility after refreshing the views.
