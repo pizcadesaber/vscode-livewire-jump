@@ -3,7 +3,7 @@
   "displayName": "Livewire Jump",
   "description": "A VS Code extension for navigating Laravel/Livewire project files.",
   "icon": "images/icon.jpg",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "publisher": "pizca",
   "homepage": "https://github.com/pizcadesaber/vscode-livewire-jump",
   "repository": {
@@ -65,13 +65,13 @@
             "type": "object",
             "additionalProperties": {
               "type": "string",
-              "description": "Sets the identifier. Tags must start with `<`."
+              "description": "Sets tag and alias prefixes."
             },
             "default": {
-              "resources/views:app/View": "",
-              "resources/views/components:app/View/Components": "x-|components.",
-              "resources/views/livewire:app/Livewire": "livewire:|livewire.",
-              "resources/views/livewire/pages:app/Livewire/Pages": "|livewire.pages."
+              "resources/views|app/View": "",
+              "resources/views/components|app/View/Components": "components.|x-",
+              "resources/views/livewire|app/Livewire": "livewire.|livewire:",
+              "resources/views/livewire/pages|app/Livewire/Pages": "livewire.pages."
             },
             "description": "Sets view directories and their associated tags."
           },

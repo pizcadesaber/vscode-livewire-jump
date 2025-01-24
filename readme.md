@@ -12,7 +12,7 @@ This extension allows you to quickly navigate between Livewire views, their asso
 
     > **Note:** It is still pending to implement updates based on file change observation.
 
-- **Customize view discovery:** The `livewire-jump.view.dirs` setting allows you to customize the search by specifying prefixes for views and tags. In summary, each key-value pair would follow this syntax: `"bladeDir|classDir": "tagPrefix|classPrefix"`. Keys also support `:` as a separator, but values do not, as it would conflict with `livewire:`. It’s not mandatory to specify both directories, but if you want to define only `classDir`, you must prepend it with `|` so it is passed as the second argument.
+- **Customize view discovery:** The `livewire-jump.view.dirs` setting allows you to customize the search by specifying prefixes for views and tags. In summary, each key-value pair would follow this syntax: `"bladeDir|classDir": "classPrefix|tagPrefix"`. Keys also support `:` as a separator, but values do not, as it would conflict with `livewire:`. It’s not mandatory to specify both directories, but if you want to define only `classDir`, you must prepend it with `|` so it is passed as the second argument.
     
     ![view-discovery](https://github.com/pizcadesaber/vscode-livewire-jump/raw/HEAD/docs/images/view-discovery.jpg)
 
