@@ -6,8 +6,6 @@ All notable changes to the "livewire-jump" extension will be documented in this 
 
 - No changes yet.
 
-Here’s an improved version of your changelog entry in English, with clearer structure and phrasing:
-
 ## [2.0.2] - 2025-01-24
 
 - PHP component files are now read to identify view aliases within `view()`. It also handles multiple related views for easier navigation.
