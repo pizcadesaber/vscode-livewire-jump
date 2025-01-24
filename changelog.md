@@ -6,14 +6,16 @@ All notable changes to the "livewire-jump" extension will be documented in this 
 
 - No changes yet.
 
-## [2.0.2] - 2025-01-23
+Here’s an improved version of your changelog entry in English, with clearer structure and phrasing:
 
-- It reads PHP component files to find view alias from `view()`. Handles multiple related views to go.
-- It skips view as component if it does not exist `index.blade.php` in subdirectories. Livewire components are found from `app/Livewire` (no Volt support).
-- **Break change:** The `view.dirs` values have been changed, with the key being `blade-dir|php-dir` and the value being `view-prefix|tag-prefix`. Review your configuration if you change this configuration value (swap `view-prefix` and `tag-prefix`).
-- It displays view, component (Blade and Livewire) and `view.dirs` PHP class counts when view is refreshed.
+## [2.0.2] - 2025-01-24
 
-> You must select `Refresh Views` from `PHP` or `Blade` file context menu to update your views to the current system.
+- PHP component files are now read to identify view aliases within `view()`. It also handles multiple related views for easier navigation.
+- Views are skipped as components if an `index.blade.php` file does not exist in the subdirectories. Livewire components are detected from the `app/Livewire` directory (Volt support is not included).
+- **Breaking Change:** The structure of `view.dirs` has been updated. The key format is now `blade-dir|php-dir` and the value format is `view-prefix|tag-prefix`. Review your configuration if you’ve modified this setting, as the `view-prefix` and `tag-prefix` values are swapped.
+- The count of views, components (Blade and Livewire), and associated `view.dirs` PHP classes is now displayed when the view is refreshed.
+
+> **Important:** To apply these changes, select `Refresh Views` from the context menu of a PHP or Blade file. This will update your views to the new system.
 
 ## [2.0.1] - 2025-01-17
 
