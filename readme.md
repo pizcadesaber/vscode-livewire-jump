@@ -10,8 +10,7 @@ This extension allows you to quickly navigate between Livewire views, their asso
 
     ![Refresh views](https://github.com/pizcadesaber/vscode-livewire-jump/raw/HEAD/docs/images/refresh-views.gif)
 
-    > **Note:** Updates based on file change observation are still pending implementation.  
-    > **Breaking Change:** The `livewire-jump.view.dirs` configuration has been updated. Keys now follow the format `bladeDir|phpDir`, and values use `viewPrefix|tagPrefix`. Ensure you update your settings accordingly if you've customized this value.
+    > **Note:** Updates based on file change observation are still pending implementation.
 
 - **Customize view discovery:** The `livewire-jump.view.dirs` setting allows you to customize the search by specifying prefixes for views and tags. Each key-value pair must follow this format: `"bladeDir|phpDir": "viewPrefix|tagPrefix"`. Keys also support `:` as a separator, but values do not, as it would conflict with `livewire:`. It’s not mandatory to specify both directories, but if you want to define only `phpDir`, you must prepend it with `|` so it is passed as the second argument.
 
