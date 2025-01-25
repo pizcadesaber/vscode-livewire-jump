@@ -1,55 +1,47 @@
 # Livewire Jump Extension for VS Code
 
-*Jump ahead, jump fast—speedy development!*
+*Jump ahead and develop with speed!*
 
-This extension allows you to quickly navigate between Livewire views, their associated PHP classes, and Blade components in Laravel projects. It streamlines the development workflow by providing an efficient way to jump from one file to another with just one click.
+This extension allows you to quickly navigate between views and their associated PHP files in Laravel-Livewire projects. It optimizes your workflow by providing an efficient way to jump from one file to another with just a click.
 
 ## Features
 
-- **Register components and autocomplete Blade and Livewire tags:** To enhance performance, a manual action has been added to register all components and use them for code autocompletion across different parts of your project. The `Refresh Views` action is only available in Blade and PHP language files.
+- **Register components and autocomplete your code:** To improve performance, a manual action has been added to register all components and use them for code autocomplete in different parts of your project. This action is hidden outside the context of Blade and PHP documents. It also displays the number of views, components (Blade and Livewire), and PHP classes in `view.dirs` when views are updated.
 
-    ![Refresh views](https://github.com/pizcadesaber/vscode-livewire-jump/raw/HEAD/docs/images/refresh-views.gif)
+    ![Refresh Views](https://github.com/pizcadesaber/vscode-livewire-jump/raw/HEAD/docs/images/refresh-views.gif)
 
-    > **Note:** Updates based on file change observation are still pending implementation.
+    > **Note:** File-watching-based updates are not yet implemented.
 
-- **Customize view discovery:** The `livewire-jump.view.dirs` setting allows you to customize the search by specifying prefixes for views and tags. Each key-value pair must follow this format: `"bladeDir|phpDir": "viewPrefix|tagPrefix"`. Keys also support `:` as a separator, but values do not, as it would conflict with `livewire:`. It’s not mandatory to specify both directories, but if you want to define only `phpDir`, you must prepend it with `|` so it is passed as the second argument.
-
-    ![View discovery](https://github.com/pizcadesaber/vscode-livewire-jump/raw/HEAD/docs/images/view-discovery.jpg)
-
-- **Jump from Blade view to PHP class (and vice versa):** Easily navigate between Blade files and their corresponding PHP classes. Right-click on a Blade or PHP file and select `Go to PHP Class` or `Go to Blade Class`.
+- **Jump between Blade views and PHP files:** Easily navigate between Blade files and their corresponding PHP classes. Right-click on a Blade or PHP file and select `Go to PHP File` or `Go to Blade File`.
 
     ![Go to PHP Class and View](https://github.com/pizcadesaber/vscode-livewire-jump/raw/HEAD/docs/images/view-class.gif)
 
-- **Autocomplete component names:** The extension reads the paths found in `app/Livewire` and provides autocompletion for `<livewire:` and `<x-` tags. These paths are loaded using the `livewire-jump.view.dirs` setting. Note: Volt components are not supported.
+- **Autocomplete components and jump to their files:** The extension scans routes found in `app/Livewire` and provides autocomplete for `<livewire:` and `<x-` tags. These routes are loaded using the `livewire-jump.view.dirs` setting. Note: Volt components are not supported. Navigate from a Blade view to other Livewire or Blade components by holding down `Ctrl` (or `Cmd` on Mac) and left-clicking on any component tag.
 
-- **Skip non-existent component views:** Components without an `index.blade.php` file in their subdirectories are skipped, ensuring cleaner navigation.
+    ![Go to Component Views](https://github.com/pizcadesaber/vscode-livewire-jump/raw/HEAD/docs/images/blade-links.gif)
 
-- **Jump from Blade to other components:** Navigate from a Blade view to other Livewire or Blade components. Hold `Ctrl` (or `Cmd` on Mac) and left-click on any tag that starts with `<x-` or `<livewire:`.
+- **Autocomplete and view links:** Autocompletes arguments in methods like `view` or similar with views. It is highlighted to allow `Ctrl+click` to navigate to the corresponding Blade file. You can notify me if any methods are missing.
 
-    ![Go to component views](https://github.com/pizcadesaber/vscode-livewire-jump/raw/HEAD/docs/images/blade-links.gif)
+    ![View String](https://github.com/pizcadesaber/vscode-livewire-jump/raw/HEAD/docs/images/view-string.gif)
 
-- **Autocomplete for view string:** Autocomplete suggestions when typing `view('')`, or similar functions, show existing Blade view files.
+- **Customize view discovery:** The `livewire-jump.view.dirs` setting allows you to customize discovery by specifying prefixes for views and tags. Each key-value pair must follow this format: `"bladeDir|phpDir": "viewPrefix|tagPrefix"`. Keys also support `:` as a separator, but values do not, as they would conflict with `livewire:`. Specifying both directories is not mandatory, but if you want to define only `phpDir`, prefix it with `|` so it is passed as the second argument.
 
-    ![View string](https://github.com/pizcadesaber/vscode-livewire-jump/raw/HEAD/docs/images/view-string.gif)
+    ![View Discovery](https://github.com/pizcadesaber/vscode-livewire-jump/raw/HEAD/docs/images/view-discovery.jpg)
 
-- **Jump from view string to Blade view:** You can navigate directly from a `view('...')`, `layout('...')`, or `#[Layout('...')]` string to the corresponding Blade view file by clicking the link.
-
-- **Display view and component counts:** The extension now displays the number of views, components (Blade and Livewire), and `view.dirs` PHP classes when refreshing views.
+    > **Note:** The current behavior allows discovering Livewire components from their PHP classes (traditional). Additionally, Blade components are added with only view files in subdirectories if they contain an `index.blade.php` file. Tags are not added if `tagPrefix` is empty.
 
 ## Requirements
 
-This extension has no additional dependencies. You only need a Laravel project with Livewire to take full advantage of its features.
+This extension is designed to support Laravel projects with additional Livewire support.
 
-## Extension Setup
+It does not register any programming language. To ensure proper functionality, make sure you have PHP and Blade language support enabled, and that your `*.php` and `*.blade.php` files are associated with them.
 
-The extension doesn't require additional configuration. Simply install it, and it will be ready to use. However, ensure your project follows the standard Laravel and Livewire conventions for seamless integration.
+## Extension Settings
 
-If your project uses a custom folder structure, update the extension settings to match your paths.
+It follows the latest Laravel and Livewire conventions to provide code autocomplete and link files for quick navigation.
 
-## Important Note
-
-To apply the latest changes, select **`Refresh Views`** from the context menu of a **PHP** or **Blade** file. This updates your views to the new system.
+A set of editor settings can be found under `Settings > Extensions > Livewire Jump` to customize its behavior. However, ensure your project adheres to Laravel and Livewire’s standard conventions for seamless integration.
 
 ## Known Issues
 
-If you encounter any bugs or unexpected behavior, feel free to report them in the repository.
+If you encounter errors or unexpected behavior, feel free to report them in the repository.

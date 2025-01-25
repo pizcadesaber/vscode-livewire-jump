@@ -3,7 +3,7 @@
   "displayName": "Livewire Jump",
   "description": "A VS Code extension for navigating Laravel/Livewire project files.",
   "icon": "images/icon.jpg",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "publisher": "pizca",
   "homepage": "https://github.com/pizcadesaber/vscode-livewire-jump",
   "repository": {
@@ -100,7 +100,7 @@
       },
       {
         "command": "livewire-jump.goToClass",
-        "title": "Go to PHP Class"
+        "title": "Go to PHP File"
       },
       {
         "command": "livewire-jump.goToView",
