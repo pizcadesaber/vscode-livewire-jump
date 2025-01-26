@@ -12,6 +12,14 @@ This extension allows you to quickly navigate between views and their associated
 
     > **Note:** File-watching-based updates are not yet implemented.
 
+- **Register and autocomplete Blade icons:** Specify the paths to search in the extension settings and run the `Refresh icons` command to start autocompleting your code.
+
+    ![Autocomplete Blade icons](https://github.com/pizcadesaber/vscode-livewire-jump/raw/HEAD/docs/images/blade-icon-completion.gif)
+
+    Here's an example for Blade icons from the project and Heroicons.
+
+    ![Blade icons settings](https://github.com/pizcadesaber/vscode-livewire-jump/raw/HEAD/docs/images/blade-icon-settings.jpg)
+
 - **Jump between Blade views and PHP files:** Easily navigate between Blade files and their corresponding PHP classes. Right-click on a Blade or PHP file and select `Go to PHP File` or `Go to Blade File`.
 
     ![Go to PHP Class and View](https://github.com/pizcadesaber/vscode-livewire-jump/raw/HEAD/docs/images/view-class.gif)
