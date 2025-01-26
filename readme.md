@@ -2,7 +2,7 @@
 
 *Jump ahead and develop with speed!*
 
-This extension allows you to quickly navigate between views and their associated PHP files in Laravel-Livewire projects. It optimizes your workflow by providing an efficient way to jump from one file to another with just a click.
+This extension allows you to quickly navigate between views and their associated PHP files in Laravel-Livewire projects. It streamlines your workflow by providing an efficient way to jump from one file to another with just a click.
 
 ## Features
 

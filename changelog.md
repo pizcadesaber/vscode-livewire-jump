@@ -6,6 +6,11 @@ All notable changes to the **Livewire Jump** extension will be documented in thi
 
 - No changes yet.
 
+## [2.1.0] - 2025-01-26
+
+- Support for Blade icons. You can add paths to the folders containing SVG files to autocomplete the tags.  
+- The file selector for autocompletion has been updated for cases where `.blade.php` files are defined as the PHP language.
+
 ## [2.0.3] - 2025-01-25
 
 - Improved the trigger for view autocompletion.  

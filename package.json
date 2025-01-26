@@ -3,7 +3,7 @@
   "displayName": "Livewire Jump",
   "description": "A VS Code extension for navigating Laravel/Livewire project files.",
   "icon": "images/icon.jpg",
-  "version": "2.0.3",
+  "version": "2.1.0",
   "publisher": "pizca",
   "homepage": "https://github.com/pizcadesaber/vscode-livewire-jump",
   "repository": {
@@ -23,6 +23,7 @@
   "keywords": [
     "Laravel",
     "Livewire",
+    "Blade Icons",
     "PHP",
     "Autocomplete",
     "Blade",
@@ -41,6 +42,24 @@
       {
         "title": "Livewire Jump",
         "properties": {
+          "livewire-jump.blade.icon.completion": {
+            "type": "boolean",
+            "default": true,
+            "description": "Enables icon autocompletion for `<x-` Blade tags."
+          },
+          "livewire-jump.blade.icon.dirs": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "description": "Ex: 'resources/svg': `x-icon-` for `<x-icon-* />`."
+            },
+            "description": "Sets icon directories and their associated tag prefixes."
+          },
+          "livewire-jump.blade.icon.link": {
+            "type": "boolean",
+            "default": true,
+            "description": "Enables icon link for `<x-` Blade tags."
+          },
           "livewire-jump.blade.tag.completion": {
             "type": "boolean",
             "default": true,
@@ -96,19 +115,33 @@
     "commands": [
       {
         "command": "livewire-jump.clearViews",
-        "title": "Livewire Jump: Clear Views"
+        "title": "Clear Views",
+        "category": "Livewire Jump"
       },
       {
         "command": "livewire-jump.goToClass",
-        "title": "Go to PHP File"
+        "title": "Go to PHP File",
+        "category": "Livewire Jump"
       },
       {
         "command": "livewire-jump.goToView",
-        "title": "Go to Blade View"
+        "title": "Go to Blade View",
+        "category": "Livewire Jump"
       },
       {
         "command": "livewire-jump.refreshViews",
-        "title": "Refresh Views"
+        "title": "Refresh Views",
+        "category": "Livewire Jump"
+      },
+      {
+        "command": "livewire-jump.refreshBladeIcons",
+        "title": "Refresh Blade Icons",
+        "category": "Livewire Jump"
+      },
+      {
+        "command": "livewire-jump.clearBladeIcons",
+        "title": "Clear Blade Icons",
+        "category": "Livewire Jump"
       }
     ],
     "menus": {
@@ -120,10 +153,6 @@
         {
           "command": "livewire-jump.goToView",
           "when": "livewire-jump.hasView"
-        },
-        {
-          "command": "livewire-jump.refreshViews",
-          "when": "editorLangId == php || editorLangId == blade"
         }
       ],
       "editor/context": [
@@ -139,16 +168,8 @@
         },
         {
           "command": "livewire-jump.refreshViews",
-          "when": "editorLangId == php || editorLangId == blade",
+          "when": "editorLangId == php || editorFilePath =~ /.*\\.php$/",
           "group": "z_commands"
-        }
-      ],
-      "statusBar": [
-        {
-          "command": "livewire-jump.clearViews",
-          "alignment": "right",
-          "text": "Clear Views",
-          "tooltip": "Clear the cached views"
         }
       ]
     }
