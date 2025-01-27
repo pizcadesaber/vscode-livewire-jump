@@ -6,6 +6,11 @@ All notable changes to the **Livewire Jump** extension will be documented in thi
 
 - No changes yet.
 
+## [2.1.1] - 2025-01-27
+
+- Fixes recursive discovery of Blade components.
+- Links to components that don't start with `x-` or `livewire:`.
+
 ## [2.1.0] - 2025-01-26
 
 - Support for Blade icons. You can add paths to the folders containing SVG files to autocomplete the tags.  
