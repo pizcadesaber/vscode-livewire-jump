@@ -6,6 +6,10 @@ All notable changes to the **Livewire Jump** extension will be documented in thi
 
 - No changes yet.
 
+## [2.1.3] - 2025-01-29
+
+- Simplifies component names: from `Menu/Menu.php` or `menu/menu.blade.php` to `<x-menu>`.
+
 ## [2.1.1] - 2025-01-27
 
 - Fixes recursive discovery of Blade components.

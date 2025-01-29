@@ -3,7 +3,7 @@
   "displayName": "Livewire Jump",
   "description": "A VS Code extension for navigating Laravel/Livewire project files.",
   "icon": "images/icon.jpg",
-  "version": "2.1.1",
+  "version": "2.1.3",
   "publisher": "pizca",
   "homepage": "https://github.com/pizcadesaber/vscode-livewire-jump",
   "repository": {
