@@ -6,6 +6,11 @@ All notable changes to the **Livewire Jump** extension will be documented in thi
 
 - No changes yet.
 
+## [2.1.6] - 2025-01-30
+
+- Display a message when the `Clear Blade Icons` command finishes executing.
+- Show the duration of the `Refresh Views` and `Refresh Blade Icons` commands.
+
 ## [2.1.3] - 2025-01-29
 
 - Simplifies component names: from `Menu/Menu.php` or `menu/menu.blade.php` to `<x-menu>`.
