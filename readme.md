@@ -2,7 +2,9 @@
 
 *Jump ahead and develop with speed!*
 
-This extension allows you to quickly navigate between views and their associated PHP files in Laravel-Livewire projects. It streamlines your workflow by providing an efficient way to jump from one file to another with just a click.
+A lightweight extension that optimizes your development in Laravel projects, especially in Blade and Livewire contexts. It allows you to quickly navigate between related files and autocomplete your code with ease.
+
+Continue reading to discover all the features and details.
 
 ## Features
 
@@ -37,6 +39,8 @@ This extension allows you to quickly navigate between views and their associated
     ![View Discovery](https://github.com/pizcadesaber/vscode-livewire-jump/raw/HEAD/docs/images/view-discovery.jpg)
 
     > **Note:** The current behavior allows discovering Livewire components from their PHP classes (traditional). Additionally, Blade components are added with only view files in subdirectories if they contain an `index.blade.php` file. Tags are not added if `tagPrefix` is empty.
+
+- **Translations in VS Code settings:** If your editor is not in English, you can benefit from translations included in the extension for the VS Code editor. Currently, there is support for configuration descriptions and command names in Spanish, French, English (default), and Portuguese. You can change the VS Code language with `Ctrl+Shift+P` and select the `Configure Display Language` command. If for some reason you want to remove this preference, run the `Clear Display Language Preference` command.
 
 ## Requirements
 

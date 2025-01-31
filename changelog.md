@@ -6,6 +6,13 @@ All notable changes to the **Livewire Jump** extension will be documented in thi
 
 - No changes yet.
 
+## [2.2.0] - 2025-01-31
+
+- Optimizes indexed icons. **You need to update the icons to work correctly.**
+- Translation of extension configuration descriptions and command names has been added for some languages.
+
+> **Note:** I want to optimize indexed views as well, but it will take more time since they are used in more places and require integration adjustments.
+
 ## [2.1.6] - 2025-01-30
 
 - Display a message when the `Clear Blade Icons` command finishes executing.

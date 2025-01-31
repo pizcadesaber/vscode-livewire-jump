@@ -3,7 +3,7 @@
   "displayName": "Livewire Jump",
   "description": "A VS Code extension for navigating Laravel/Livewire project files.",
   "icon": "images/icon.jpg",
-  "version": "2.1.6",
+  "version": "2.2.0",
   "publisher": "pizca",
   "homepage": "https://github.com/pizcadesaber/vscode-livewire-jump",
   "repository": {
@@ -45,46 +45,44 @@
           "livewire-jump.blade.icon.completion": {
             "type": "boolean",
             "default": true,
-            "description": "Enables icon autocompletion for `<x-` Blade tags."
+            "markdownDescription": "%livewire-jump.blade.icon.completion.description%"
           },
           "livewire-jump.blade.icon.dirs": {
             "type": "object",
             "additionalProperties": {
-              "type": "string",
-              "description": "Ex: 'resources/svg': `x-icon-` for `<x-icon-* />`."
+              "type": "string"
             },
-            "description": "Sets icon directories and their associated tag prefixes."
+            "markdownDescription": "%livewire-jump.blade.icon.dirs.description%"
           },
           "livewire-jump.blade.icon.link": {
             "type": "boolean",
             "default": true,
-            "description": "Enables icon link for `<x-` Blade tags."
+            "description": "%livewire-jump.blade.icon.link.description%"
           },
           "livewire-jump.blade.tag.completion": {
             "type": "boolean",
             "default": true,
-            "description": "Enables autocomplete for `<x-` Blade tags."
+            "description": "%livewire-jump.blade.tag.completion.description%"
           },
           "livewire-jump.blade.tag.hover": {
             "type": "boolean",
             "default": true,
-            "description": "Enables Blade component tag hovers."
+            "description": "%livewire-jump.blade.tag.hover.description%"
           },
           "livewire-jump.blade.tag.link": {
             "type": "boolean",
             "default": true,
-            "description": "Enables Blade and Livewire component tag links for Blade templates."
+            "description": "%livewire-jump.blade.tag.link.description%"
           },
           "livewire-jump.view.completion": {
             "type": "boolean",
             "default": true,
-            "description": "Enables view autocompletion for functions."
+            "description": "%livewire-jump.view.completion.description%"
           },
           "livewire-jump.view.dirs": {
             "type": "object",
             "additionalProperties": {
-              "type": "string",
-              "description": "Sets tag and alias prefixes."
+              "type": "string"
             },
             "default": {
               "resources/views|app/View": "",
@@ -92,55 +90,55 @@
               "resources/views/livewire|app/Livewire": "livewire.|livewire:",
               "resources/views/livewire/pages|app/Livewire/Pages": "livewire.pages."
             },
-            "description": "Sets view directories and their associated tags."
+            "markdownDescription": "%livewire-jump.view.dirs.description%"
           },
           "livewire-jump.view.hover": {
             "type": "boolean",
             "default": true,
-            "description": "Enables view hover."
+            "description": "%livewire-jump.view.hover.description%"
           },
           "livewire-jump.view.link": {
             "type": "boolean",
             "default": true,
-            "description": "Enables view link."
+            "description": "%livewire-jump.view.link.description%"
           },
           "livewire-jump.view.navigation": {
             "type": "boolean",
             "default": true,
-            "description": "Enables `Go to Class` and `Go to View` options for Blade and Livewire components."
+            "markdownDescription": "%livewire-jump.view.navigation.description%"
           }
         }
       }
     ],
     "commands": [
       {
-        "command": "livewire-jump.clearViews",
-        "title": "Clear Views",
-        "category": "Livewire Jump"
-      },
-      {
-        "command": "livewire-jump.goToClass",
-        "title": "Go to PHP File",
-        "category": "Livewire Jump"
-      },
-      {
-        "command": "livewire-jump.goToView",
-        "title": "Go to Blade View",
-        "category": "Livewire Jump"
-      },
-      {
-        "command": "livewire-jump.refreshViews",
-        "title": "Refresh Views",
-        "category": "Livewire Jump"
-      },
-      {
         "command": "livewire-jump.refreshBladeIcons",
-        "title": "Refresh Blade Icons",
+        "title": "%livewire-jump.refreshBladeIcons.title%",
         "category": "Livewire Jump"
       },
       {
         "command": "livewire-jump.clearBladeIcons",
-        "title": "Clear Blade Icons",
+        "title": "%livewire-jump.clearBladeIcons.title%",
+        "category": "Livewire Jump"
+      },
+      {
+        "command": "livewire-jump.refreshViews",
+        "title": "%livewire-jump.refreshViews.title%",
+        "category": "Livewire Jump"
+      },
+      {
+        "command": "livewire-jump.clearViews",
+        "title": "%livewire-jump.clearViews.title%",
+        "category": "Livewire Jump"
+      },
+      {
+        "command": "livewire-jump.goToClass",
+        "title": "%livewire-jump.goToClass.title%",
+        "category": "Livewire Jump"
+      },
+      {
+        "command": "livewire-jump.goToView",
+        "title": "%livewire-jump.goToView.title%",
         "category": "Livewire Jump"
       }
     ],
