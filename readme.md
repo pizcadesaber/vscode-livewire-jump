@@ -34,11 +34,11 @@ Continue reading to discover all the features and details.
 
     ![View String](https://github.com/pizcadesaber/vscode-livewire-jump/raw/HEAD/docs/images/view-string.gif)
 
-- **Customize view discovery:** The `livewire-jump.view.dirs` setting allows you to customize discovery by specifying prefixes for views and tags. Each key-value pair must follow this format: `"bladeDir|phpDir": "viewPrefix|tagPrefix"`. Keys also support `:` as a separator, but values do not, as they would conflict with `livewire:`. Specifying both directories is not mandatory, but if you want to define only `phpDir`, prefix it with `|` so it is passed as the second argument.
+- **Customize view discovery:** The `livewire-jump.view.dirs` setting allows you to customize discovery by specifying prefixes for views and tags. Each key-value pair must follow this format: `"blade-dir|php-dir": "view-prefix|tag-prefix"`. Keys also support `:` as a separator, but values do not, as they would conflict with `livewire:`. Specifying both directories is not mandatory, but if you want to define only `php-dir`, prefix it with `|` so it is passed as the second argument.
 
     ![View Discovery](https://github.com/pizcadesaber/vscode-livewire-jump/raw/HEAD/docs/images/view-discovery.jpg)
 
-    > **Note:** The current behavior allows discovering Livewire components from their PHP classes (traditional). Additionally, Blade components are added with only view files in subdirectories if they contain an `index.blade.php` file. Tags are not added if `tagPrefix` is empty.
+    > **Note:** The current behavior allows indexing Livewire components from their PHP classes (traditional). Blade components are also added with just a view file in subdirectories if they contain the `index.blade.php` file or the directory name matches one of their files. In the latter case, the component is simplified to the folder. Tags are not added if `tag-prefix` is empty.
 
 - **Translations in VS Code settings:** If your editor is not in English, you can benefit from translations included in the extension for the VS Code editor. Currently, there is support for configuration descriptions and command names in Spanish, French, English (default), and Portuguese. You can change the VS Code language with `Ctrl+Shift+P` and select the `Configure Display Language` command. If for some reason you want to remove this preference, run the `Clear Display Language Preference` command.
 

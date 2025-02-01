@@ -6,9 +6,14 @@ All notable changes to the **Livewire Jump** extension will be documented in thi
 
 - No changes yet.
 
+## [2.2.3] - 2025-02-01
+
+- Adds the `Clear Indexed Items` command to remove all indexed items in the workspace.
+- Fixes the component link provider. Loaded items were not being reset.
+
 ## [2.2.0] - 2025-01-31
 
-- Optimizes indexed icons. **You need to update the icons to work correctly.**
+- Optimizes indexed icons. **You must refresh the icons to work correctly.**
 - Translation of extension configuration descriptions and command names has been added for some languages.
 
 > **Note:** I want to optimize indexed views as well, but it will take more time since they are used in more places and require integration adjustments.
