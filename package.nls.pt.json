@@ -1,0 +1,21 @@
+{
+    "livewire-jump.blade.icon.completion.description": "Ativa a autocompletação para as tags `<x-*` dos ícones Blade.",
+    "livewire-jump.blade.icon.dirs.description": "Define os diretórios de ícones Blade e seus prefixos de tags. **Exemplo:**\n\n```json\n{\n\t\"resources/svg\": \"x-icon-\", // para tags <x-icon-*>\n\t\"vendor/blade-ui-kit/blade-heroicons/resources/svg\": \"x-heroicon-\" // <x-heroicon-*>\n}\n```",
+    "livewire-jump.blade.icon.hover.description": "Ativa as tooltips para as tags de ícones Blade.",
+    "livewire-jump.blade.icon.link.description": "Ativa links para as tags de ícones Blade.",
+    "livewire-jump.blade.tag.completion.description": "Ativa a autocompletação para as tags de componentes Blade.",
+    "livewire-jump.blade.tag.hover.description": "Ativa as tooltips para as tags de componentes Blade.",
+    "livewire-jump.blade.tag.link.description": "Ativa links para as tags de componentes Blade.",
+    "livewire-jump.view.completion.description": "Ativa a autocompletação para views nos argumentos de funções.",
+    "livewire-jump.view.dirs.description": "Define diretórios de views e classes PHP e seus respectivos prefixos para definir aliases e tags de componentes. **Sintaxe:**\n\n```json\n{\n\t\"blade-dir|php-dir\": \"view-prefix|tag-prefix\"\n}\n```",
+    "livewire-jump.view.hover.description": "Ativa as tooltips para views nos argumentos de funções.",
+    "livewire-jump.view.link.description": "Ativa links para views nos argumentos de funções.",
+    "livewire-jump.view.navigation.description": "Ativa opções para `Ir para a Classe PHP` e `Ir para a View Blade` em arquivos Blade e PHP.",
+    "livewire-jump.clearIndexedItems.title": "Limpar itens indexados",
+    "livewire-jump.refreshBladeIcons.title": "Atualizar ícones Blade indexados",
+    "livewire-jump.clearBladeIcons.title": "Limpar ícones Blade indexados",
+    "livewire-jump.refreshViews.title": "Atualizar views indexadas",
+    "livewire-jump.clearViews.title": "Limpar views indexadas",
+    "livewire-jump.goToClass.title": "Ir para a Classe PHP",
+    "livewire-jump.goToView.title": "Ir para a View Blade"
+}

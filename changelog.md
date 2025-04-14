@@ -6,6 +6,11 @@ All notable changes to the **Livewire Jump** extension will be documented in thi
 
 - No changes yet.
 
+## [2.3.0] - 2025-04-14
+
+- Package updates and internal redesign.
+- A `Show Status` editor command has been added to display the first item of each group, allowing you to verify if the file names/paths are correct.
+
 ## [2.2.3] - 2025-02-01
 
 - Adds the `Clear Indexed Items` command to remove all indexed items in the workspace.

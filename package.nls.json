@@ -1,0 +1,21 @@
+{
+    "livewire-jump.blade.icon.completion.description": "Enables autocompletion for `<x-*` Blade icon tags.",
+    "livewire-jump.blade.icon.dirs.description": "Sets Blade icon directories and their tag prefixes. **Example:**\n\n```json\n{\n\t\"resources/svg\": \"x-icon-\", // for <x-icon-*>\n\t\"vendor/blade-ui-kit/blade-heroicons/resources/svg\": \"x-heroicon-\" // <x-heroicon-*>\n}\n```",
+    "livewire-jump.blade.icon.hover.description": "Enables tooltips for Blade icon tags.",
+    "livewire-jump.blade.icon.link.description": "Enables links for Blade icon tags.",
+    "livewire-jump.blade.tag.completion.description": "Enables autocompletion for Blade component tags.",
+    "livewire-jump.blade.tag.hover.description": "Enables tooltips for Blade component tags.",
+    "livewire-jump.blade.tag.link.description": "Enables links for Blade component tags.",
+    "livewire-jump.view.completion.description": "Enables autocompletion for views in function arguments.",
+    "livewire-jump.view.dirs.description": "Sets view and PHP class directories and their corresponding prefixes to define aliases and component tags. **Syntax:**\n\n```json\n{\n\t\"blade-dir|php-dir\": \"view-prefix|tag-prefix\"\n}\n```",
+    "livewire-jump.view.hover.description": "Enables tooltips for views in function arguments.",
+    "livewire-jump.view.link.description": "Enables links for views in function arguments.",
+    "livewire-jump.view.navigation.description": "Enables options to `Go to PHP Class` and `Go to Blade View` in Blade and PHP files.",
+    "livewire-jump.clearIndexedItems.title": "Clear indexed items",
+    "livewire-jump.refreshBladeIcons.title": "Refresh indexed Blade icons",
+    "livewire-jump.clearBladeIcons.title": "Clear indexed Blade icons",
+    "livewire-jump.refreshViews.title": "Refresh indexed views",
+    "livewire-jump.clearViews.title": "Clear indexed views",
+    "livewire-jump.goToClass.title": "Go to PHP Class",
+    "livewire-jump.goToView.title": "Go to Blade View"
+}
