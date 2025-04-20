@@ -6,6 +6,10 @@ All notable changes to the **Livewire Jump** extension will be documented in thi
 
 - No changes yet.
 
+## [2.3.1] - 2025-04-20
+
+- Normalizes file paths.
+
 ## [2.3.0] - 2025-04-14
 
 - Package updates and internal redesign.
